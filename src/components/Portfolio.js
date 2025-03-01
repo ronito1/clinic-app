@@ -22,7 +22,7 @@ const VideoSection = () => {
               {playingIndex === index ? (
                 <iframe
                   className="video"
-                  src={`${template.videoUrl}?autoplay=1`}
+                  src={`${template.videoUrl}&autoplay=1`}
                   frameBorder="0"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
@@ -39,7 +39,7 @@ const VideoSection = () => {
             <div className="template-info">
               <h3>TEMPLATE CODE</h3>
               <div className="template-code">{template.code}</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+              <p>Enhance your clinic with a tailored digital experience.</p>
             </div>
           </div>
         ))}
@@ -48,6 +48,7 @@ const VideoSection = () => {
         .container {
           text-align: center;
           padding: 40px;
+          background-color: #f9f9f9;
         }
         .heading {
           color: #FF5722;
@@ -69,6 +70,11 @@ const VideoSection = () => {
           width: 80%;
           max-width: 900px;
           justify-content: space-between;
+          border: 1px solid #ddd;
+          padding: 20px;
+          border-radius: 10px;
+          background-color: #fff;
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
         .left {
           flex-direction: row;
@@ -107,6 +113,9 @@ const VideoSection = () => {
           align-items: center;
           justify-content: center;
           transition: background 0.3s ease;
+        }
+        .overlay:hover {
+          background: rgba(0, 0, 0, 0.8);
         }
         .play-button {
           font-size: 32px;
