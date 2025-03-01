@@ -1,7 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
 import CopyRight from "../components/CopyRight";
-import ImageView from "../components/popup/ImageView";
-import VideoPopup from "../components/popup/VideoPopup";
 import {
   aTagClick,
   dataImage,
@@ -32,8 +30,7 @@ const Layout = ({ children, dark }) => {
   return (
     <Fragment>
       <PreLoader />
-      <ImageView />
-      <VideoPopup />
+      
       <div className="dizme_tm_all_wrap" data-magic-cursor="show">
         <MobileMenu
           logo={
