@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Fragment } from "react";
 import Cursor from "../src/layout/Cursor";
 import PreLoader from "../src/layout/PreLoader";
+import Image from "next/image";
 
 const Intro = () => {
   return (
@@ -21,7 +22,7 @@ const Intro = () => {
             </a>
           </div>
           <div className="short_info">
-            <img src="img/logo/logo.png" alt="image" />
+            <Image src="img/logo/logo.png" alt="image" />
             <h3>Personal Portfolio Template</h3>
           </div>
           <span className="intro_line" />
@@ -30,14 +31,14 @@ const Intro = () => {
           <div className="demos">
             <div className="left">
               <div className="desc">
-                <img src="img/intro/light.png" alt="image" />
+                <Image src="img/intro/light.png" alt="image" />
                 <h3 className="title">Light Demo</h3>
               </div>
               <a className="intro_link" href="/" target="_blank" />
             </div>
             <div className="right">
               <div className="desc">
-                <img src="img/intro/dark.png" alt="image" />
+                <Image src="img/intro/dark.png" alt="image" />
                 <h3 className="title">Dark Demo</h3>
               </div>
               <a className="intro_link" href="index-dark" target="_blank" />

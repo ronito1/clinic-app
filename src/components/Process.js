@@ -2,9 +2,15 @@ import parse from "html-react-parser";
 import { useEffect, useState } from "react";
 import { fatchData } from "../utilits";
 const Process = ({ dark }) => {
+
   const [data, setData] = useState([]);
-  useEffect(async () => {
-    setData(await fatchData("/static/workProcess.json"));
+ useEffect(() => {
+    const fetchDataAsync = async () => {
+      const result = await fatchData("/static/workProcess.json");
+      setData(result);
+    };
+    
+    fetchDataAsync();
   }, []);
   return (
     <div className="dizme_tm_section" id="process">
