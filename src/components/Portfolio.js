@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 
 const VideoSection = () => {
   const templates = [
@@ -18,18 +19,30 @@ const VideoSection = () => {
         {templates.map((template, index) => (
           <div key={index} className={`template ${index % 2 === 0 ? "left" : "right"}`}>
             <div className="laptop">
-              <img src="/img/portfolio/laptop-cover.png" alt="Laptop Frame" className="laptop-frame" />
+              <Image
+                src="/img/portfolio/laptop-cover.png"
+                alt="Laptop Frame"
+                width={500}
+                height={350}
+                className="laptop-frame"
+              />
               {playingIndex === index ? (
                 <iframe
                   className="video"
-                  src={`${template.videoUrl}&autoplay=1`}
+                  src={`${template.videoUrl}&autoplay=1&mute=1`}
                   frameBorder="0"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
                 ></iframe>
               ) : (
                 <div className="thumbnail" onClick={() => setPlayingIndex(index)}>
-                  <img src="/img/portfolio/laptop-thumbnail.png" alt="Video Thumbnail" className="thumbnail-img" />
+                  <Image
+                    src="/img/portfolio/laptop-thumbnail.png"
+                    alt="Video Thumbnail"
+                    width={373}
+                    height={220}
+                    className="thumbnail-img"
+                  />
                   <div className="overlay">
                     <span className="play-button">▶</span>
                   </div>
