@@ -5,6 +5,9 @@ import Home from "../src/components/Home";
 import Process from "../src/components/Process";
 import Layout from "../src/layout/Layout";
 
+const Portfolio = dynamic(() => import("../src/components/Portfolio"), {
+  ssr: false,
+});
 
 
 const Index = () => {
@@ -21,7 +24,9 @@ const Index = () => {
       {/* ABOUT */}
       <About />
       {/* /ABOUT */}
-   
+    {/* PORTFOLIO */}
+    <Portfolio />
+      {/* /PORTFOLIO */}
       {/* SKILLS */}
      
     </Layout>

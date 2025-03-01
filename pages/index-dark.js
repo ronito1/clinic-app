@@ -7,6 +7,10 @@ import Process from "../src/components/Process";
 import Layout from "../src/layout/Layout";
 
 
+const Portfolio = dynamic(() => import("../src/components/Portfolio"), {
+  ssr: false,
+});
+
 const Index = () => {
   useEffect(() => {
     document.querySelector("body").classList.add("dark");
@@ -25,7 +29,9 @@ const Index = () => {
       {/* ABOUT */}
       <About dark />
       {/* /ABOUT */}
-      {/* PORTFOLIO */}
+        {/* PORTFOLIO */}
+        <Portfolio />
+      {/* /PORTFOLIO */}
    
     
     </Layout>

@@ -16,7 +16,7 @@
     "react-countup": "^6.1.1",
     "react-dom": "17.0.2",
     "react-visibility-sensor": "^5.1.1",
-    "swiper": "^8.0.7",
+    "swiper": "^11.2.4",
     "vanilla-tilt": "^1.7.2",
     "wowjs": "^1.1.3"
   },
