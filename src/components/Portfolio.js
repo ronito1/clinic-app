@@ -57,7 +57,7 @@ const VideoSection = () => {
           </div>
         ))}
       </div>
-      <style jsx>{`
+     <style jsx="true">{`
         .container {
           text-align: center;
           padding: 40px;
