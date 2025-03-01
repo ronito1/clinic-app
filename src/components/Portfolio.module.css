@@ -1,0 +1,117 @@
+.container {
+    text-align: center;
+    padding: 40px;
+    background-color: #f9f9f9;
+  }
+  .heading {
+    color: #FF5722;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .templateList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  .template {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 900px;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .left {
+    flex-direction: row;
+  }
+  .right {
+    flex-direction: row-reverse;
+  }
+  .laptop {
+    position: relative;
+    width: 500px;
+    height: 350px;
+  }
+  .laptopFrame {
+    width: 100%;
+    height: auto;
+  }
+  .thumbnail, .video {
+    position: absolute;
+    width: 74.5%;
+    height: 62.8%;
+    top: 4.5%;
+    left: 13.5%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+  .overlay:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .playButton {
+    font-size: 32px;
+    color: white;
+  }
+  .templateInfo {
+    text-align: left;
+    max-width: 250px;
+  }
+  .templateInfo h3 {
+    color: #9c6000;
+    font-weight: bold;
+  }
+  .templateCode {
+    background: #fff;
+    border: 2px solid gray;
+    padding: 6px 16px;
+    font-weight: bold;
+    font-size: 23px;
+    text-align: center;
+    color: rgb(128, 83, 5);
+    width: fit-content;
+    min-width: 150px;
+    font-family: "Arial", sans-serif;
+  }
+  .templateInfo p {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+  }
+  @media (max-width: 768px) {
+    .template {
+      flex-direction: column !important;
+      align-items: center;
+    }
+    .laptop {
+      width: 400px;
+      height: 300px;
+    }
+    .thumbnail, .video {
+      width: 75%;
+      height: 80%;
+      top: 0;
+      left: 12.5%;
+    }
+  }
