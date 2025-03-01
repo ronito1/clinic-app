@@ -120,25 +120,22 @@ const VideoSection = () => {
           color: #9c6000;
           font-weight: bold;
         }
-          
-       .template-code {
-  background: #fff;
-  border: 2px solid gray;
-  padding: 6px 16px;
-  font-weight: bold;
-  font-size: 23px; /* Adjust as needed */
-  text-align: center;
-  color:rgb(128, 83, 5); /* Slightly darker gray for better readability */
-  width: fit-content; /* Ensures box wraps around text */
-  min-width: 150px; /* Prevents box from becoming too small */
-  font-family: "Arial", sans-serif; /* Ensures clean font */
-}
-
+        .template-code {
+          background: #fff;
+          border: 2px solid gray;
+          padding: 6px 16px;
+          font-weight: bold;
+          font-size: 23px;
+          text-align: center;
+          color: rgb(128, 83, 5);
+          width: fit-content;
+          min-width: 150px;
+          font-family: "Arial", sans-serif;
+        }
         p {
           font-size: 14px;
           color: #333;
-            font-weight: bold;
-
+          font-weight: bold;
         }
         @media (max-width: 768px) {
           .template {
