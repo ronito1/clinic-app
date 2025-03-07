@@ -1,13 +1,26 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "./Portfolio.module.css";
 
+// Extract YouTube video ID from URL
+const getYouTubeVideoId = (url) => {
+  const regExp = /^.*(youtu.be\/|v\/|e\/|u\/\w+\/|embed\/|v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[2].length === 11) ? match[2] : null;
+};
+
+// Get thumbnail URL from video ID
+const getYouTubeThumbnail = (url) => {
+  const videoId = getYouTubeVideoId(url);
+  return videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : null;
+};
+
 const VideoSection = () => {
   const templates = [
-    { code: "REGOCLIN032501", videoUrl: "https://www.youtube.com/embed/ae05k9e_zFc?si=yJFrPEwOOYIBMkkP" },
-    { code: "REGOCLIN032502", videoUrl: "https://www.youtube.com/embed/ae05k9e_zFc?si=yJFrPEwOOYIBMkkP" },
-    { code: "REGOCLIN032503", videoUrl: "https://www.youtube.com/embed/ae05k9e_zFc?si=yJFrPEwOOYIBMkkP" },
-    { code: "REGOCLIN032504", videoUrl: "https://www.youtube.com/embed/ae05k9e_zFc?si=yJFrPEwOOYIBMkkP" },
-    { code: "REGOCLIN032505", videoUrl: "https://www.youtube.com/embed/ae05k9e_zFc?si=yJFrPEwOOYIBMkkP" }
+    { code: "REGOCLIN032501", videoUrl: "https://www.youtube.com/embed/jh5U5BnpGN8?si=NQ4rmAtx3AZcqwiK" },
+    { code: "REGOCLIN032502", videoUrl: "https://www.youtube.com/embed/AKa2ABRRgPs?si=Hw6c2O0INdJD_D8_" },
+    { code: "REGOCLIN032503", videoUrl: "https://www.youtube.com/embed/74DWwSxsVSs?si=KS0vcFxQqY4HZ94N" },
+    { code: "REGOCLIN032504", videoUrl: "https://www.youtube.com/embed/-hVy_jxeMeA?si=0Nc9bu_b7hiJqNk-" },
+    { code: "REGOCLIN032505", videoUrl: "https://www.youtube.com/embed/KqCUuvl1myg?si=wqhwmlldZZLSarPn" }
   ];
 
   const [playingIndex, setPlayingIndex] = useState(null);
@@ -84,22 +97,15 @@ const VideoSection = () => {
                     allow="autoplay; encrypted-media; fullscreen"
                     allowFullScreen
                   ></iframe>
-                  <div 
-                    className={styles.centerClickArea}
-                    style={{
-                      position: 'absolute',
-                      top: '25%',
-                      left: '25%',
-                      width: '50%',
-                      height: '50%',
-                      zIndex: 10,
-                      cursor: 'pointer',
-                      background: 'transparent'
-                    }}
-                  />
+                  <div className={styles.centerClickArea} />
                 </>
               ) : (
                 <div className={styles.thumbnail}>
+                  <img 
+                    src={getYouTubeThumbnail(template.videoUrl)} 
+                    alt={`Template ${template.code}`}
+                    className={styles.thumbnailImage}
+                  />
                   <div className={styles.overlay}>
                     <span className={styles.playButton}>▶</span>
                   </div>

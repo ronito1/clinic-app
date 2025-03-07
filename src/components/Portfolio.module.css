@@ -82,6 +82,26 @@
   background-color: #1a1a1a;
   cursor: pointer;
   transition: transform 0.3s ease;
+  overflow: hidden;
+}
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.thumbnail:hover .thumbnailImage {
+  transform: scale(1.05);
+}
+.centerClickArea {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  z-index: 10;
+  cursor: pointer;
+  background: transparent;
 }
 .overlay {
   position: absolute;
